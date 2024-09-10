@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f5;
+        }
+
+        .navbar {
+            background-color: #08082e;
+            padding: 15px;
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .navbar .brand {
+            font-size: 1.5em;
+        }
+
+        .navbar .user-profile {
+            position: relative;
+        }
+
+        .user-profile img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+
+        .user-profile-dropdown {
+            display: none;
+            position: absolute;
+            right: 0;
+            background-color: white;
+            color: black;
+            border-radius: 5px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 10px;
+            z-index: 10;
+        }
+
+        .user-profile:hover .user-profile-dropdown {
+            display: block;
+        }
+
+        .user-profile-dropdown a {
+            display: block;
+            color: black;
+            padding: 10px;
+            text-decoration: none;
+        }
+
+        .user-profile-dropdown a:hover {
+            background-color: #f0f0f5;
+        }
+
+        .container {
+            padding: 20px;
+        }
+
+        .section-title {
+            color: #08082e;
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .content-cards {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
+        .card {
+            width: 30%;
+            background-color: white;
+            margin: 20px 0;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            position: relative;
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .card-content {
+            padding: 20px;
+        }
+
+        .card-content h3 {
+            color: #08082e;
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+
+        .card-content p {
+            color: #555;
+            font-size: 14px;
+        }
+
+        .card-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.6);
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 20px;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .card:hover .card-overlay {
+            opacity: 1;
+        }
+
+        .content-section {
+            margin-top: 50px;
+        }
+
+        .recommended-section {
+            background-color: #e6e6f7;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 50px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .card {
+                width: 100%;
+                margin-bottom: 30px;
+            }
+
+            .navbar .brand {
+                font-size: 1.2em;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <div class="navbar">
+        <div class="brand">User Dashboard</div>
+        <div class="user-profile">
+            <img src="https://via.placeholder.com/40" alt="User Profile">
+            <div class="user-profile-dropdown">
+                <a href="#">Profile</a>
+                <a href="#">Settings</a>
+                <a href="#">Logout</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Container -->
+    <div class="container">
+
+        <!-- Popular Services Section -->
+        <div class="content-section">
+            <h2 class="section-title">Popular Services</h2>
+            <div class="content-cards">
+                <div class="card">
+                    <img src="https://via.placeholder.com/300x200" alt="Service 1">
+                    <div class="card-content">
+                        <h3>Premium Feature 1</h3>
+                        <p>Access to advanced tools and features designed for professionals.</p>
+                    </div>
+                    <div class="card-overlay">Upgrade to Premium</div>
+                </div>
+
+                <div class="card">
+                    <img src="https://via.placeholder.com/300x200" alt="Service 2">
+                    <div class="card-content">
+                        <h3>Exclusive Tool 2</h3>
+                        <p>Special tools designed for enhanced user experience.</p>
+                    </div>
+                    <div class="card-overlay">Upgrade to Standard</div>
+                </div>
+
+                <div class="card">
+                    <img src="https://via.placeholder.com/300x200" alt="Service 3">
+                    <div class="card-content">
+                        <h3>Basic Access Tool</h3>
+                        <p>Basic tools available for all users.</p>
+                    </div>
+                    <div class="card-overlay">Available</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Recommended for You Section -->
+        <div class="content-section recommended-section">
+            <h2 class="section-title">Recommended for You</h2>
+            <div class="content-cards">
+                <div class="card">
+                    <img src="https://via.placeholder.com/300x200" alt="Service 4">
+                    <div class="card-content">
+                        <h3>Custom Feature 1</h3>
+                        <p>Highly recommended based on your usage patterns.</p>
+                    </div>
+                    <div class="card-overlay">Recommended</div>
+                </div>
+
+                <div class="card">
+                    <img src="https://via.placeholder.com/300x200" alt="Service 5">
+                    <div class="card-content">
+                        <h3>Exclusive Tool 3</h3>
+                        <p>Special tools for premium users.</p>
+                    </div>
+                    <div class="card-overlay">Upgrade to Premium</div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        // JavaScript for any dynamic functionality (such as loading content based on user plan)
+        // You can add API calls or dynamically fetch data for each card section
+
+        function loadUserData() {
+            // Load user-specific content based on the plan
+            // Simulate different contents based on the user's plan
+        }
+
+        window.onload = loadUserData;
+    </script>
+
+</body>
+</html>
