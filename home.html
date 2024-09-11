@@ -3,103 +3,59 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Plan Website</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f5f5f5;
-            margin: 0;
-            padding: 0;
-        }
-        .navbar {
-            background-color: #08082e;
-            padding: 15px;
-            text-align: right;
-            color: white;
-        }
-        .navbar a {
-            color: white;
-            text-decoration: none;
-            margin: 0 15px;
-        }
-        .hero {
-            background-color: #08082e;
-            color: white;
-            padding: 100px 20px;
-            text-align: center;
-        }
-        .plans {
-            display: flex;
-            justify-content: space-around;
-            padding: 50px;
-        }
-        .plan {
-            background-color: white;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            text-align: center;
-        }
-        .plan h2 {
-            color: #08082e;
-        }
-        .plan p {
-            font-size: 14px;
-            color: #555;
-        }
-        .plan button {
-            background-color: #08082e;
-            color: white;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-        .plan button:hover {
-            background-color: #333;
-        }
-    </style>
+    <title>My Web App</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-
-    <div class="navbar">
-        <a href="#">Home</a>
-        <a href="#pricing">Pricing</a>
-        <a href="#login">Sign In</a>
-    </div>
-
-    <div class="hero">
-        <h1>Choose the Plan that Suits You</h1>
-        <p>Get access to exclusive content and premium services.</p>
-    </div>
-
-    <div class="plans">
-        <div class="plan">
-            <h2>Basic Plan</h2>
-            <p>$10 / month</p>
-            <button onclick="goToPricing()">Select</button>
+    <header>
+        <div class="container">
+            <h1>My Web App</h1>
+            <nav>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#signup" class="cta-button">Sign Up</a></li>
+                </ul>
+            </nav>
         </div>
-        <div class="plan">
-            <h2>Standard Plan</h2>
-            <p>$20 / month</p>
-            <button onclick="goToPricing()">Select</button>
+    </header>
+
+    <main>
+        <section id="hero" class="hero-banner">
+            <div class="hero-content">
+                <h2>Discover Your Next Favorite Show</h2>
+                <p>Stream your favorite movies and series from our vast collection.</p>
+                <a href="#signup" class="cta-button">Get Started</a>
+            </div>
+        </section>
+
+        <section id="home" class="info-section">
+            <div class="container">
+                <h2>Welcome to My Web App</h2>
+                <p>Explore our collection of the latest and greatest in entertainment. Sign up today to start watching!</p>
+            </div>
+        </section>
+
+        <section id="about" class="info-section">
+            <div class="container">
+                <h2>About Us</h2>
+                <p>We offer a wide range of movies and TV shows to suit all tastes. Our mission is to provide top-notch entertainment for everyone.</p>
+            </div>
+        </section>
+
+        <section id="contact" class="info-section">
+            <div class="container">
+                <h2>Contact Us</h2>
+                <p>If you have any questions or need support, feel free to reach out to us via email or our contact form.</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 My Web App. All rights reserved.</p>
         </div>
-        <div class="plan">
-            <h2>Premium Plan</h2>
-            <p>$30 / month</p>
-            <button onclick="goToPricing()">Select</button>
-        </div>
-    </div>
-
-    <script>
-        function goToPricing() {
-            window.location.href = 'pricing.html'; // Redirect to Pricing Page
-        }
-
-        function goToLogin() {
-            window.location.href = 'login.html'; // Redirect to Login Page
-        }
-    </script>
-
+    </footer>
 </body>
 </html>
